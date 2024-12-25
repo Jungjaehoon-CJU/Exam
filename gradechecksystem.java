@@ -56,8 +56,8 @@ public class gradechecksystem {
 
     // 교수 기능: 성적 입력 및 저장
     private void handleProfessorInput(Scanner scanner) throws IOException {
-        System.out.println("교수님, 학생 성적을 입력하세요.");
-        System.out.print("학생 ID: ");
+        System.out.println("성적을 입력하세요.");
+        System.out.print("학번: ");
         String studentId = scanner.nextLine();
 
         studentGrades.putIfAbsent(studentId, new ArrayList<>());
@@ -79,7 +79,7 @@ public class gradechecksystem {
     private void handleStudentCheck(Scanner scanner) throws IOException {
         loadGradesFromFile("grades.txt");
 
-        System.out.print("학생 ID를 입력하세요: ");
+        System.out.print("학번을 입력하세요: ");
         String studentId = scanner.nextLine();
 
         if (studentGrades.containsKey(studentId)) {
@@ -88,7 +88,7 @@ public class gradechecksystem {
                 System.out.println(grade);
             }
         } else {
-            System.out.println("해당 학생 ID로 성적을 찾을 수 없습니다.");
+            System.out.println("해당 학번으로 성적을 찾을 수 없습니다.");
         }
     }
 
